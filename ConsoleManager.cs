@@ -30,9 +30,11 @@ class ConsoleManager
             {
                 case "1":
                     GenerateCode();
+                    Console.WriteLine("\n");
                     break;
                 case "2":
                     ValidateCode();
+                    Console.WriteLine("\n");
                     break;
                 case "3":
                     Console.Clear();
@@ -46,7 +48,7 @@ class ConsoleManager
                     break;
             }
 
-            Console.WriteLine("\n");
+            
 
         }
     }
