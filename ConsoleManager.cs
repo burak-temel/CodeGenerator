@@ -17,7 +17,7 @@ class ConsoleManager
         {
             Console.WriteLine("1- Kod Üret");
             Console.WriteLine("2- Kodu Doğrula");
-            Console.WriteLine("3- Kodları Listele");
+            Console.WriteLine("3- Ekranı temizle");
             Console.WriteLine("0- Çıkış");
             Console.Write("Seçiminizi yapınız: ");
 
