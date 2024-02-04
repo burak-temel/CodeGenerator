@@ -1,4 +1,5 @@
-﻿using Interface.Businnes;
+﻿using Enum;
+using Interface.Businnes;
 
 class ConsoleManager
 {
@@ -26,30 +27,39 @@ class ConsoleManager
 
             Console.WriteLine("\n");
 
-            switch (choice)
+            int intChoice;
+            if (int.TryParse(choice, out intChoice))
             {
-                case "1":
-                    GenerateCode();
-                    Console.WriteLine("\n");
-                    break;
-                case "2":
-                    ValidateCode();
-                    Console.WriteLine("\n");
-                    break;
-                case "3":
-                    Console.Clear();
-                    break;
-                case "0":
-                    Console.WriteLine("Çıkış yapılıyor...");
-                    Environment.Exit(0);
-                    return;
-                default:
-                    Console.WriteLine("Geçersiz seçim!");
-                    break;
+                MenuOption selectedOption = (MenuOption)intChoice;
+
+                switch (selectedOption)
+                {
+                    case MenuOption.GenerateCode:
+                        GenerateCode();
+                        Console.WriteLine("\n");
+                        break;
+                    case MenuOption.ValidateCode:
+                        ValidateCode();
+                        Console.WriteLine("\n");
+                        break;
+                    case MenuOption.ClearConsole:
+                        Console.Clear();
+                        break;
+                    case MenuOption.Exit:
+                        Console.WriteLine("Çıkış yapılıyor...");
+                        Environment.Exit(0);
+                        return;
+                    default:
+                        Console.WriteLine("Geçersiz seçim!");
+                        Console.WriteLine("\n");
+                        break;
+                }
             }
-
-            
-
+            else
+            {
+                Console.WriteLine("Geçersiz seçim!");
+                Console.WriteLine("\n");
+            }
         }
     }
 

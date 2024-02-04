@@ -19,6 +19,14 @@ class Program
             serviceProvider.GetRequiredService<ICodeValidatorBS>()
         );
 
-        consoleManager.Start();
+        try
+        {
+            consoleManager.Start();
+
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
     }
 }
